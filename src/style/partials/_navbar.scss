@@ -1,0 +1,131 @@
+@import "./colors";
+
+/*hamburger*/
+.hamburger {
+  background-color: transparent;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+.bar {
+  width: 35px;
+  height: 3px;
+  background-color: $AlmostBlack;
+  margin: 5px 0;
+  transition: 0.3s ease-in-out;
+}
+/*navbar*/
+.navbar,
+.navbar__list,
+.navbar__menu,
+.navbar__user {
+  display: flex;
+}
+header {
+  width: 100%;
+  background-color: $AlmostWhite;
+}
+.navbar {
+  margin: 0 3%;
+  z-index: 999;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+}
+.navbar a {
+  color: $MediumGray;
+}
+.navbar a:hover {
+  color: $AlmostBlack;
+}
+
+.navbar__list {
+  gap: 30px;
+}
+.navbar__menu {
+  width: 85%;
+  justify-content: space-between;
+}
+.navbar__user {
+  gap: 20px;
+}
+
+.register__btn {
+  border: 1px solid $MediumGray;
+  border-radius: 10px;
+  // width: 100%;
+  color: $MediumGray;
+  transition: 0.3s ease-in-out;
+  padding: 10px 30px;
+  text-align: center;
+}
+.register__btn:hover {
+  color: $AlmostBlack;
+  border: 1px solid $AlmostBlack;
+}
+
+@media only screen and (max-width: 960px) {
+  .navbar {
+    position: inherit;
+  }
+  .navbar__list,
+  .navbar__user {
+    flex-direction: column;
+  }
+  .navbar__user {
+    justify-content: center;
+    align-items: center;
+  }
+  .register__btn {
+    display: block;
+    width: 50vw;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    background-color: $AlmostWhite;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    right: -100%;
+    top: 0;
+    justify-content: flex-start;
+    width: 70%;
+    z-index: 99;
+    height: 100vh;
+    overflow-x: hidden;
+    gap: 40px;
+    padding: 80px 40px;
+    transition: 0.3s ease-in-out;
+    overflow-y: scroll;
+  }
+  .navbar__menu::-webkit-scrollbar {
+    width: 0em;
+    background-color: transparent;
+  }
+  .navbar__menu::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .navbar__menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    background-color: transparent;
+  }
+  .navbar__menu.active {
+    right: 0;
+  }
+  .hamburger {
+    display: block;
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    transform: translateX(-80%);
+  }
+
+  .hamburger.active .bar2 {
+    opacity: 0;
+  }
+  .hamburger.active .bar1 {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar3 {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

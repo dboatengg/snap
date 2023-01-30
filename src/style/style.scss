@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+@import "./partials/colors";
+@import "./partials/navbar";
+@import "./partials/hero";
+
+/*==============(Applying general styling)=================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 500;
+  background-color: $AlmostWhite;
+  color: $AlmostBlack;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: $AlmostBlack;
+}
+li {
+  list-style: none;
+}
