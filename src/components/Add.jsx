@@ -48,7 +48,7 @@ const Add = ({ collectionRef }) => {
           onChange={handleChange}
         ></textarea>
       </label>
-      <button className="btn-add">Add data</button>
+      <button className="btn-add">Add note</button>
     </form>
   );
 };

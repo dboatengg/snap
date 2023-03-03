@@ -1,3 +1,4 @@
+/*===========================(reset styles)====================*/
 html {
   font-size: 62.5%;
 }
@@ -10,7 +11,7 @@ html {
 }
 body {
   font-size: 1.6rem;
-  font-family: "Oswald", sans-serif;
+  font-family: "Tilt Neon", cursive;
 }
 p {
   margin: 0;
@@ -20,25 +21,32 @@ h2,
 h3 {
   margin: 0;
 }
-.btn-add {
-  display: block;
-}
+
+/*===========================(wrapper)====================*/
 .wrapper {
   width: 90%;
   margin: 50px auto;
 }
+/*===========================(Form)====================*/
 form {
   max-width: 400px;
-  width: 90%;
+  width: 100%;
   display: flex;
   gap: 10px;
   flex-direction: column;
 }
+form p {
+  font-size: 2rem;
+}
+.btn-add {
+  display: block;
+}
 .title,
 .text {
-  padding: 10px;
+  padding: 8px;
   font-size: 1.6rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Tilt Neon", cursive;
+  border: 1px solid #333;
 }
 .text,
 .title,
@@ -52,11 +60,30 @@ form {
   height: 150px;
 }
 .btn-add {
-  padding: 1rem 0;
+  padding: 1.2rem 0;
+  font-family: "Tilt Neon", cursive;
+  font-size: 1.8rem;
   cursor: pointer;
+  border: none;
+  background-color: #274472;
+  color: #c3e0e5;
+  transition: 0.3s ease-in-out;
+}
+.btn-add:active,
+.note-btns button {
+  transform: scale(0.95);
+}
+
+/*===========================(notes)====================*/
+.notes-wrapper {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 1536px;
+  margin-top: 20px;
 }
 .notes-title {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .note-btns {
   display: flex;
@@ -68,35 +95,35 @@ form {
   font-family: "Shantell Sans", cursive;
   padding: 5px;
 }
-.notes-wrapper {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  max-width: 1536px;
-  margin-top: 20px;
-}
 .notes {
   font-family: "Shantell Sans", cursive;
 }
 .note {
-  background-color: #aaa;
+  background-color: #a8a8a8;
   padding: 10px;
   border-radius: 2px;
   max-width: 350px;
-  width: 90%;
+  width: 100%;
+  box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
+  opacity: 0.5;
+  animation: fadeIn 0.3s ease-out forwards;
 }
-
 .notes h3 {
   font-weight: 500;
 }
-@media (max-width: 768px) {
-  .note,
-  form {
-    max-width: 100%;
+/*==========(Fade-in effects for notes)========*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-/*Modal*/
+/*=======================(Modal)===========================*/
 .modal {
   position: fixed;
   top: 0;
@@ -108,7 +135,6 @@ form {
   justify-content: center;
   align-items: center;
 }
-
 .modal-content {
   background-color: #fff;
   padding: 20px;
@@ -116,24 +142,20 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   max-width: 400px;
 }
-
 .modal-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .modal-message {
   margin-bottom: 20px;
 }
-
 .modal-btns {
   display: flex;
   justify-content: flex-end;
 }
-
 .modal-btn {
-  background-color: #4caf50;
+  background-color: #274472;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -142,6 +164,10 @@ form {
   cursor: pointer;
 }
 
-.modal-btn:hover {
-  background-color: #3e8e41;
+/*==========(Styling for tablet and mobile screens)========*/
+@media (max-width: 768px) {
+  .note,
+  form {
+    max-width: 100%;
+  }
 }
