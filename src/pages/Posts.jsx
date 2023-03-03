@@ -9,6 +9,7 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import Add from "../components/Add";
+import Modal from "../components/Modal";
 
 import spinner from "../assets/spinner.gif";
 
@@ -77,26 +78,8 @@ const Posts = (isAuth) => {
           </div>
         )}
       </div>
-
-      {/* display modal to let users confirm deleting a note  */}
       {deleteNoteId && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Confirm delete</h2>
-            <p>Are you sure you want to delete this note?</p>
-            <div className="modal-btns">
-              <button
-                className="modal-btn"
-                onClick={() => setDeleteNoteId(null)}
-              >
-                Cancel
-              </button>
-              <button className="modal-btn" onClick={handleDelete}>
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
+        <Modal handleDelete={handleDelete} setDeleteNoteId={setDeleteNoteId} />
       )}
     </div>
   );

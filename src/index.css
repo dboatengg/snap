@@ -10,7 +10,7 @@ html {
   padding: 0;
 }
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: "Tilt Neon", cursive;
 }
 p {
@@ -24,7 +24,7 @@ h3 {
 /*==========(Navbar)========*/
 .nav {
   height: 10vh;
-  background-color: aquamarine;
+  background-color: #274472;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +53,7 @@ form p {
 .btn-add {
   display: block;
 }
+
 .title,
 .text {
   padding: 8px;
@@ -111,19 +112,20 @@ form p {
   font-family: "Shantell Sans", cursive;
 }
 .note {
-  background-color: #a8a8a8;
+  background-color: #cfd7c7;
   padding: 10px;
   border-radius: 2px;
   max-width: 350px;
   width: 100%;
-  box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 6px 8px 6px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 4px 6px -1px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 3px 4px 3px -3px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 3px 4px 6px -1px rgba(0, 0, 0, 0.75) inset;
   opacity: 0.5;
   animation: fadeIn 0.3s ease-out forwards;
 }
-.notes h3 {
+.note h3 {
   font-weight: 500;
+  font-size: 2.5rem;
 }
 /*==========(Fade-in effects for notes)========*/
 @keyframes fadeIn {
