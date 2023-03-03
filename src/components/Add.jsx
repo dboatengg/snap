@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { db } from "../firebase-config";
 import { serverTimestamp, addDoc } from "firebase/firestore";
+import { auth } from "../firebase-config";
 
 const Add = ({ collectionRef }) => {
   const [formData, setFormData] = useState({ title: "", text: "" });
@@ -18,8 +18,8 @@ const Add = ({ collectionRef }) => {
         title: formData.title,
         text: formData.text,
         createdAt: serverTimestamp(),
+        user_id: auth.currentUser.uid,
       });
-      // setFormData({ title: "", text: "" });
       event.target.reset();
     } catch (error) {
       console.error(error);

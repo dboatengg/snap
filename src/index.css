@@ -21,7 +21,19 @@ h2,
 h3 {
   margin: 0;
 }
-
+/*==========(Navbar)========*/
+.nav {
+  height: 10vh;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
 /*===========================(wrapper)====================*/
 .wrapper {
   width: 90%;
@@ -121,6 +133,10 @@ form p {
   to {
     opacity: 1;
   }
+}
+/*==========(Posts)========*/
+.spinner {
+  width: 5rem;
 }
 
 /*=======================(Modal)===========================*/
