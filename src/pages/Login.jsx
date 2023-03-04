@@ -15,11 +15,11 @@ const Login = ({ setIsAuth }) => {
   };
 
   return (
-    <div className="">
-      <div className="">
-        <h2 className="">Sign In With Google to continue</h2>
+    <div className="login">
+      <div className="content">
+        <h2 className="">Sign In With Google to access Snap</h2>
         <button className="" onClick={signInWithGoogle}>
-          <FcGoogle className="" />
+          <FcGoogle className="icon" />
           Sign in with Google
         </button>
       </div>

@@ -32,8 +32,17 @@ h3 {
 }
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: #c3e0e5;
 }
+.nav button {
+  background-color: transparent;
+  border: none;
+  color: #c3e0e5;
+  font-family: "Tilt Neon", cursive;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 /*===========================(wrapper)====================*/
 .wrapper {
   width: 90%;
@@ -141,6 +150,43 @@ form p {
   width: 5rem;
 }
 
+/*=======================(Login)===========================*/
+.login {
+  height: 90vh;
+  width: 100%;
+}
+.login,
+.login .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .content {
+  flex-direction: column;
+  gap: 10px;
+}
+.login button {
+  font-family: "Tilt Neon", cursive;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+.login h2 {
+  font-size: 4rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+}
+.login button .icon {
+  font-size: 3rem;
+}
+
 /*=======================(Modal)===========================*/
 .modal {
   position: fixed;
@@ -169,12 +215,13 @@ form p {
   margin-bottom: 20px;
 }
 .modal-btns {
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 }
 .modal-btn {
   background-color: #274472;
-  color: #fff;
+  color: #c3e0e5;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -187,5 +234,9 @@ form p {
   .note,
   form {
     max-width: 100%;
+  }
+  .login h2 {
+    font-size: 3rem;
+    width: 80%;
   }
 }

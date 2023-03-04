@@ -8,7 +8,7 @@ import {
   orderBy,
   deleteDoc,
 } from "firebase/firestore";
-import Add from "../components/Add";
+import AddNote from "../components/AddNote";
 import Modal from "../components/Modal";
 
 import spinner from "../assets/spinner.gif";
@@ -17,6 +17,7 @@ const Posts = (isAuth) => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [deleteNoteId, setDeleteNoteId] = useState(null);
+  // const [editNote, setEditNote] = useState(null);
 
   // collection reference
   const collectionRef = collection(db, "notes");
@@ -49,9 +50,15 @@ const Posts = (isAuth) => {
       console.error(error);
     }
   };
+
+  // edit note on delete btn click
+  // const handleEdit = (note) => {
+  //   setEditNote(note);
+  // };
+
   return (
     <div className="wrapper">
-      <Add collectionRef={collectionRef} />
+      <AddNote collectionRef={collectionRef} />
       <div className="notes">
         <h2 className="notes-title">Notes</h2>
         <hr />
