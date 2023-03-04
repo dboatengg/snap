@@ -21,7 +21,8 @@ const Navbar = ({ isAuth, setIsAuth }) => {
           <Link to="/snap/posts">Add note</Link>
         </>
       ) : (
-        <Link to="/snap/">Login</Link>
+        ""
+        // <Link to="/snap/">Login</Link>
       )}
     </nav>
   );
