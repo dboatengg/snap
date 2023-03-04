@@ -5,6 +5,7 @@ Snap is a simple note-taking app that allows users to create, edit, and delete n
 ## Features
 
 - Create notes with a title and a body
+- Login authentication: Users need log in to access their notes securely. Authentication helps protect user data and prevent unauthorized access to notes.
 - Edit notes in real-time
 - Delete notes
 - Responsive design that works on desktop and mobile
