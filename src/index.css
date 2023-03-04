@@ -34,12 +34,7 @@ h3 {
   text-decoration: none;
   color: #c3e0e5;
 }
-.nav button {
-  background-color: transparent;
-  border: none;
-  color: #c3e0e5;
-  font-family: "Tilt Neon", cursive;
-  font-size: 1.8rem;
+.nav .btn {
   cursor: pointer;
 }
 
@@ -172,9 +167,15 @@ form p {
   cursor: pointer;
   padding: 1.5rem 3rem;
   display: flex;
+  background-color: #274471;
+  color: #c3e0e5;
   align-items: center;
   gap: 5px;
   border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+.login button:active {
+  transform: scale(0.9);
 }
 .login h2 {
   font-size: 4rem;
@@ -238,5 +239,9 @@ form p {
   .login h2 {
     font-size: 3rem;
     width: 80%;
+  }
+  .login button {
+    padding: 1.2rem 2.2rem;
+    font-size: 1.6rem;
   }
 }

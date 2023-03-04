@@ -15,7 +15,9 @@ const Navbar = ({ isAuth, setIsAuth }) => {
     <nav className="nav">
       {isAuth ? (
         <>
-          <button onClick={signUserOut}>Logout</button>
+          <Link className="btn" onClick={signUserOut}>
+            Logout
+          </Link>
           <Link to="/snap/posts">Add note</Link>
         </>
       ) : (
