@@ -28,4 +28,4 @@ If you'd like to contribute to Snap, please fork the repository and create a pul
 
 ## License
 
-Snap is licensed under the MIT license. See the `LICENSE` file for more information.
+Snap is licensed under the MIT license. See the [LICENSE.md](LICENSE.md) file for more information.
