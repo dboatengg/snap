@@ -20,7 +20,7 @@ const Navbar = ({ isAuth, setIsAuth }) => {
           </Link>
         </>
       ) : (
-        ""
+        <h3 className="logo">Snap</h3>
       )}
     </nav>
   );

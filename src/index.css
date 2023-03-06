@@ -23,12 +23,18 @@ h3 {
 }
 /*==========(Navbar)========*/
 .nav {
-  height: 10vh;
+  height: 70px;
   background-color: #274472;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  color: white;
+  cursor: default;
 }
 .nav a {
   text-decoration: none;
@@ -147,7 +153,10 @@ form p {
 
 /*=======================(Login)===========================*/
 .login {
-  height: 90vh;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  height: calc(100vh - 70px);
   width: 100%;
 }
 .login,
@@ -206,6 +215,8 @@ form p {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   max-width: 400px;
+  width: 90%;
+  margin: 0 auto;
 }
 .modal-title {
   font-size: 1.2rem;
