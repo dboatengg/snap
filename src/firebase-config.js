@@ -3,12 +3,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALMKIgzzztOgynhfWCy3jGXe3IKUrNXz0",
-  authDomain: "note-app-f941b.firebaseapp.com",
-  projectId: "note-app-f941b",
-  storageBucket: "note-app-f941b.appspot.com",
-  messagingSenderId: "653864112477",
-  appId: "1:653864112477:web:434f3f27547559090458b4",
+  apiKey: "AIzaSyCyUbqR8LAR4Z2eTQV3tk2O_dq18NmNYZ4",
+  authDomain: "snap-9a847.firebaseapp.com",
+  projectId: "snap-9a847",
+  storageBucket: "snap-9a847.appspot.com",
+  messagingSenderId: "721896370628",
+  appId: "1:721896370628:web:92fadbd7111677db763491",
 };
 
 //initialize firebase

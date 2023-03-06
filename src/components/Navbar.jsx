@@ -7,7 +7,7 @@ const Navbar = ({ isAuth, setIsAuth }) => {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
-      window.location.pathname = "/snap/";
+      window.location.pathname = "/";
     });
   };
 

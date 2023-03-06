@@ -54,7 +54,7 @@ const Posts = ({ isAuth }) => {
   let navigate = useNavigate();
   useEffect(() => {
     if (!isAuth) {
-      navigate("/snap/");
+      navigate("/");
     }
   }, []);
 

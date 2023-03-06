@@ -11,8 +11,8 @@ const App = () => {
     <Router>
       <Navbar isAuth={isAuth} setIsAuth={setIsAuth} />
       <Routes>
-        <Route path="/snap/posts" element={<Posts isAuth={isAuth} />}></Route>
-        <Route path="/snap/" element={<Login setIsAuth={setIsAuth} />}></Route>
+        <Route path="/posts" element={<Posts isAuth={isAuth} />}></Route>
+        <Route path="/" element={<Login setIsAuth={setIsAuth} />}></Route>
       </Routes>
     </Router>
   );
