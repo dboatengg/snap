@@ -18,7 +18,7 @@ const Navbar = ({ isAuth, setIsAuth }) => {
           <Link className="btn" onClick={signUserOut}>
             Logout
           </Link>
-          <Link to="/snap/posts">Add note</Link>
+          {/* <Link to="/snap/posts">Add note</Link> */}
         </>
       ) : (
         ""

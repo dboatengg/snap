@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { db, auth } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 import {
   doc,
   onSnapshot,
@@ -10,14 +11,13 @@ import {
 } from "firebase/firestore";
 import AddNote from "../components/AddNote";
 import Modal from "../components/Modal";
-
 import spinner from "../assets/spinner.gif";
 
-const Posts = (isAuth) => {
+const Posts = ({ isAuth }) => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [deleteNoteId, setDeleteNoteId] = useState(null);
-  // const [editNote, setEditNote] = useState(null);
+  const [editNote, setEditNote] = useState(null);
 
   // collection reference
   const collectionRef = collection(db, "notes");
@@ -51,14 +51,27 @@ const Posts = (isAuth) => {
     }
   };
 
+  //Prevent unauthenticated users from accessing the posts page
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/snap/");
+    }
+  }, []);
+
   // edit note on delete btn click
-  // const handleEdit = (note) => {
-  //   setEditNote(note);
-  // };
+  const handleEdit = (note) => {
+    setEditNote(note);
+    console.log(editNote);
+  };
 
   return (
     <div className="wrapper">
-      <AddNote collectionRef={collectionRef} />
+      <AddNote
+        collectionRef={collectionRef}
+        editNote={editNote}
+        setEditNote={setEditNote}
+      />
       <div className="notes">
         <h2 className="notes-title">Notes</h2>
         <hr />
@@ -69,6 +82,7 @@ const Posts = (isAuth) => {
             {notes.map(
               (note) =>
                 isAuth &&
+                auth.currentUser &&
                 note.user_id === auth.currentUser.uid && (
                   <div key={note.id} className="note">
                     <h3>{note.title}</h3>
@@ -77,7 +91,7 @@ const Posts = (isAuth) => {
                       <button onClick={() => setDeleteNoteId(note.id)}>
                         delete
                       </button>
-                      <button>edit</button>
+                      <button onClick={() => handleEdit(note)}>edit</button>
                     </div>
                   </div>
                 )
