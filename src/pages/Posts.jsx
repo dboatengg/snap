@@ -31,7 +31,6 @@ const Posts = ({ isAuth }) => {
         ...doc.data(),
       }));
       setNotes(newData);
-      console.log(newData);
       setIsLoading(false);
     });
     return () => {
@@ -62,7 +61,6 @@ const Posts = ({ isAuth }) => {
   // edit note on delete btn click
   const handleEdit = (note) => {
     setEditNote(note);
-    console.log(editNote);
   };
 
   return (

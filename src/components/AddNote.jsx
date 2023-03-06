@@ -1,35 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { serverTimestamp, addDoc, updateDoc, doc } from "firebase/firestore";
 import { auth } from "../firebase-config";
 
 const AddNote = ({ collectionRef, editNote, setEditNote }) => {
-  // const [formData, setFormData] = useState({ title: "", text: "" });
-  const [formData, setFormData] = useState(
-    editNote
-      ? { title: editNote.title, text: editNote.text }
-      : { title: "", text: "" }
-  );
+  const [formData, setFormData] = useState({ title: "", text: "" });
+
+  // populate form fields with the editNote data when editNote prop changes
+  useEffect(() => {
+    if (editNote) {
+      setFormData({ title: editNote.title, text: editNote.text });
+    }
+  }, [editNote]);
 
   const handleChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
     setFormData({ ...formData, [name]: value });
   };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await addDoc(collectionRef, {
-  //       title: formData.title,
-  //       text: formData.text,
-  //       createdAt: serverTimestamp(),
-  //       user_id: auth.currentUser.uid,
-  //     });
-  //     event.target.reset();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,7 +37,6 @@ const AddNote = ({ collectionRef, editNote, setEditNote }) => {
         });
       }
       setFormData({ title: "", text: "" });
-      // event.target.reset();
     } catch (error) {
       console.error(error);
     }
