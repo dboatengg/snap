@@ -53,6 +53,7 @@ const AddNote = ({ collectionRef, editNote, setEditNote }) => {
           value={formData.title}
           onChange={handleChange}
           required
+          placeholder="Note title here ..."
         />
       </label>
       <label htmlFor="text">
@@ -64,6 +65,8 @@ const AddNote = ({ collectionRef, editNote, setEditNote }) => {
           value={formData.text}
           required
           onChange={handleChange}
+          maxLength="200"
+          placeholder="Write a maximum of 200 characters..."
         ></textarea>
       </label>
       <button className="btn-add">

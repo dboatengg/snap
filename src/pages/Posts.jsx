@@ -13,6 +13,9 @@ import AddNote from "../components/AddNote";
 import Modal from "../components/Modal";
 import spinner from "../assets/spinner.gif";
 
+import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin7Line } from "react-icons/ri";
+
 const Posts = ({ isAuth }) => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -86,10 +89,18 @@ const Posts = ({ isAuth }) => {
                     <h3>{note.title}</h3>
                     <p>{note.text}</p>
                     <div className="note-btns">
-                      <button onClick={() => setDeleteNoteId(note.id)}>
-                        delete
+                      <button
+                        className="delete__button"
+                        onClick={() => setDeleteNoteId(note.id)}
+                      >
+                        delete <RiDeleteBin7Line />
                       </button>
-                      <button onClick={() => handleEdit(note)}>edit</button>
+                      <button
+                        className="edit__button"
+                        onClick={() => handleEdit(note)}
+                      >
+                        edit <FiEdit />
+                      </button>
                     </div>
                   </div>
                 )
