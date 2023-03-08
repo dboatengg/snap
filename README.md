@@ -2,7 +2,7 @@
 
 ![](https://i.imgur.com/wMoh4US.png)
 
-Snap is a simple note-taking app that allows users to create, edit, and delete notes in real-time. The app is built using React and Firebase and is designed to be fast and easy to use.
+Snap is a note-taking web application that allows users to create, edit, and delete notes in real-time. The app is built using React and Firebase and is designed to be fast and easy to use.
 
 ## Demo
 Check out the live site [here](https://snap-9a847.web.app/).
