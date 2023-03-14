@@ -1,7 +1,9 @@
 # Snap
 
+### Login Page
 ![](https://i.imgur.com/wMoh4US.png)
 
+### Posts Page
 ![](https://i.imgur.com/7ZpQziE.png)
 
 Snap is a note-taking web application that allows users to create, edit, and delete notes in real-time. The app is built using React and Firebase and is designed to be fast and easy to use.
