@@ -1,3 +1,5 @@
+import "./modal.css";
+
 const Modal = ({ handleDelete, setDeleteNoteId }) => {
   return (
     <div className="modal">

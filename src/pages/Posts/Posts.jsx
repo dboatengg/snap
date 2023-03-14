@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { db, auth } from "../firebase-config";
+import { db, auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 import {
   doc,
@@ -9,12 +9,14 @@ import {
   orderBy,
   deleteDoc,
 } from "firebase/firestore";
-import AddNote from "../components/AddNote";
-import Modal from "../components/Modal";
-import spinner from "../assets/spinner.gif";
+import AddNote from "../../components/AddNote/AddNote";
+import Modal from "../../components/Modal/Modal";
+import spinner from "../../assets/spinner.gif";
 
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin7Line } from "react-icons/ri";
+
+import "./posts.css";
 
 const Posts = ({ isAuth }) => {
   const [notes, setNotes] = useState([]);
@@ -25,7 +27,7 @@ const Posts = ({ isAuth }) => {
   // collection reference
   const collectionRef = collection(db, "notes");
 
-  //get all notes from firestore
+  //access all notes from firestore
   useEffect(() => {
     const q = query(collectionRef, orderBy("createdAt", "asc"));
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -53,6 +55,11 @@ const Posts = ({ isAuth }) => {
     }
   };
 
+  // edit note on delete btn click
+  const handleEdit = (note) => {
+    setEditNote(note);
+  };
+
   //Prevent unauthenticated users from accessing the posts page
   let navigate = useNavigate();
   useEffect(() => {
@@ -60,11 +67,6 @@ const Posts = ({ isAuth }) => {
       navigate("/");
     }
   }, []);
-
-  // edit note on delete btn click
-  const handleEdit = (note) => {
-    setEditNote(note);
-  };
 
   return (
     <div className="wrapper">

@@ -1,0 +1,28 @@
+/*==========(Navbar)========*/
+.nav {
+  height: 70px;
+  background-color: #274472;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  color: white;
+  cursor: default;
+}
+.nav a {
+  text-decoration: none;
+  color: #c3e0e5;
+}
+.nav .btn {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .note {
+    max-width: 100%;
+  }
+}

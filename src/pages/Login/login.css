@@ -1,0 +1,57 @@
+/*=======================(Login)===========================*/
+.login {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+.login,
+.login .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login .content {
+  flex-direction: column;
+  gap: 10px;
+}
+.login button {
+  font-family: "Tilt Neon", cursive;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem 3rem;
+  display: flex;
+  background-color: #274471;
+  color: #c3e0e5;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+.login button:active {
+  transform: scale(0.9);
+}
+.login h2 {
+  font-size: 4rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+}
+.login button .icon {
+  font-size: 3rem;
+}
+
+/*==========(For tablet and mobile screens)========*/
+@media (max-width: 768px) {
+  .login h2 {
+    font-size: 3rem;
+    width: 80%;
+  }
+  .login button {
+    padding: 1.2rem 2.2rem;
+    font-size: 1.6rem;
+  }
+}

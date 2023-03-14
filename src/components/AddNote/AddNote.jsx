@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { serverTimestamp, addDoc, updateDoc, doc } from "firebase/firestore";
-import { auth } from "../firebase-config";
+import { auth } from "../../firebase-config";
+
+import "./addnote.css";
 
 const AddNote = ({ collectionRef, editNote, setEditNote }) => {
   const [formData, setFormData] = useState({ title: "", text: "" });
@@ -43,7 +45,7 @@ const AddNote = ({ collectionRef, editNote, setEditNote }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <label htmlFor="title">
         <p>Title</p>
         <input
